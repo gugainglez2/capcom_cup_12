@@ -1,0 +1,137 @@
+@use 'variables';
+
+.players-spotlight {
+    background: linear-gradient(180deg, 
+        variables.$dark 0%, 
+        variables.$deep-blue 50%, 
+        variables.$dark 100%);
+}
+
+.player-row {
+    padding: 100px 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(variables.$white, 0.1);
+
+    // ESTE BLOCO ABAIXO RECONSTRÓI O LAYOUT LADO A LADO
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+
+        @media (max-width: 768px) {
+            flex-direction: column !important;
+            text-align: center;
+            gap: 20px;
+        }
+    }
+
+    &--reverse {
+        background: rgba(0, 0, 0, 0.3); 
+        .player-row__content { 
+            flex-direction: row-reverse; 
+        }
+    }
+
+    &--highlight {
+        background: rgba(variables.$neon-green, 0.1);
+        border-top: 2px solid variables.$neon-green;
+        border-bottom: 2px solid variables.$neon-green;
+        
+        .player-row__name { 
+            color: variables.$neon-green;
+            text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+        }
+    }
+
+    &__frame {
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 20px 20px 0px variables.$deep-blue;
+        border: 2px solid variables.$white;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+            box-shadow: 10px 10px 0px variables.$deep-blue; // Sombra menor no mobile
+        }
+
+        &__img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+
+            &--top {
+                object-position: top;
+            }
+
+            &--zoom-bottom {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center bottom;
+                transform: scale(1.4); // Zoom desejado
+                transform-origin: bottom center; // Foca na base ao dar zoom
+            }
+        }
+    }
+
+    &__rank {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: variables.$wine-red;
+    }
+
+    &__name {
+        font-size: 4rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin: 10px 0;
+    }
+}
+
+.japan-players {
+    padding: 100px 0;
+    background: variables.$dark;
+    text-align: center;
+
+    .title--medium { margin-bottom: 50px; font-size: 2.5rem; }
+
+    &__grid {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+
+        &__item {
+            &__frame {
+                width: 180px;
+                height: 180px;
+                overflow: hidden;
+                border-radius: 50%;
+                border: 4px solid variables.$deep-blue;
+                margin-bottom: 20px;
+                transition: 0.3s;
+                &:hover { border-color: variables.$neon-green; transform: scale(1.1); }
+                
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                &--zoom-top {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center top;
+                    transform: scale(1.4);
+                    transform-origin: top center;
+                }
+            }
+
+            h3 { font-weight: bold; text-transform: uppercase; }
+        }
+    }
+}

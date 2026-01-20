@@ -1,0 +1,19 @@
+@use 'variables';
+
+.event {
+    padding: 80px 0;
+    
+    &--favorites {
+        background-image: linear-gradient(variables.$deep-blue, variables.$dark);
+    }
+
+    &--legendas {
+        background-image: linear-gradient(variables.$dark, variables.$wine-red);
+    }
+
+    &--underdog {
+        background-image: linear-gradient(variables.$wine-red, variables.$neon-green);
+    }
+    
+    border-bottom: 4px solid variables.$deep-blue;
+}//

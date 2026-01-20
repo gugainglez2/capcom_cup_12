@@ -1,0 +1,35 @@
+@use '../variables';
+
+.button {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+//
+    &--primary {
+        background-color: variables.$neon-green;
+        color: variables.$dark;
+        
+        &:hover {
+            background-color: transparent;
+            color: variables.$neon-green;
+            border-color: variables.$neon-green;
+            box-shadow: 0 0 20px variables.$neon-green;
+        }
+    }
+
+    &--secondary {
+        background-color: transparent;
+        color: variables.$white;
+        border-color: variables.$white;
+
+        &:hover {
+            background-color: variables.$white;
+            color: variables.$dark;
+        }
+    }
+}
