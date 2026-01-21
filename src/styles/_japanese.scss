@@ -88,6 +88,18 @@
         height: 220px;
     }
 
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+        &--zoom-top {
+            object-position: center top;
+            transform: scale(1.4);
+            transform-origin: top center;
+        }
+    }
+
     &__card {
         width: 100%;
         height: 100%;
@@ -113,6 +125,10 @@
         &__back {
             transform: rotateY(180deg);
             border-color: variables.$wine-red;
+
+            .japanese__img {
+                height: auto;
+            }
         }
 
         &--mystery {
@@ -138,21 +154,6 @@
                 border-style: dashed; // Diferencia dos outros cards
                 border-color: rgba(variables.$white, 0.3);
             }
-        }
-    }
-
-    &__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        
-        &--zoom-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            transform: scale(1.4);
-            transform-origin: top center;
         }
     }
 }

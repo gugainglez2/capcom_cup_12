@@ -4,8 +4,7 @@
         "progressive": true
     },
     "png": {
-        "quality": 75,
-        "compressionLevel": 9
+        "quality": 75
     },
     "webp": {
         "quality": 75,

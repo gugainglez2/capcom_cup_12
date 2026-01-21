@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="styles/main.scss">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/assets/favicon.ico">
 </head>
 <body>
     <header class="hero">
         <div class="container">
-            <h1><img class="hero__logo" src="images/assets/logo_capcom_cup_12.webp" alt="Logo oficial Capcom Cup 12" data-aos="zoom-in"></h1>
+            <h1><img class="hero__logo" src="images/assets/logo_capcom_cup_12.webp" title="Logo Capcom Cup 12" alt="Logo oficial Capcom Cup 12" data-aos="zoom-in"></h1>
             
             <div class="hero__content" data-aos="fade-up">
                 <h2 class="hero__text">
@@ -35,7 +36,16 @@
         <section class="prize">
             <div class="container" data-aos="fade-up" data-aos-duration="450" data-aos-offset="70">
                 <div class="prize__highlight">
-                    <img src="images/about/grand_prize.jpg" alt="Maleta de 1 milhão de dólares" class="prize__img">
+                    <div class="prize__frame">
+                        <div class="prize__card">
+                            <div class="prize__card__front">
+                                <img src="images/about/grand_prize.jpg" alt="Cheque de 1 milhão de dólares" class="prize__img">
+                            </div>
+                            <div class="prize__card__back">
+                                <img src="images/about/trophy_capcom_cup.jpg" title="Troféu da Capcom Cup" alt="Troféu da Capcom Cup" class="prize__img">
+                            </div>
+                        </div>
+                    </div>
                     <div class="prize__content">
                         <h2 class="title--large">O MAIOR PRÊMIO DA HISTÓRIA</h2>
                         <p class="text">
@@ -52,21 +62,40 @@
                 <h2 class="title--medium" data-aos="fade-down">HALL DOS CAMPEÕES</h2>
                 
                 <div class="legacy__grid">
-                    <article class="legacy__card" data-aos="fade-right">
-                        <img src="images/about/champion_kakeru.webp" alt="Kakeru campeão da Capcom Cup 11" class="legacy__card__img">
-                        <div class="legacy__card__details">
+                    <article class="legacy__item" data-aos="fade-right">
+                        <div class="legacy__frame flip-frame">
+                            <div class="flip-card">
+                                <div class="flip-card__front">
+                                    <img src="images/about/prize_kakeru.webp" alt="Kakeru" class="legacy__img">
+                                </div>
+                                <div class="flip-card__back">
+                                    <img src="images/characters/jp.png" title="JP" alt="JP" class="legacy__img">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="legacy__details">
                             <span class="legacy__year">2025 - CC11</span>
                             <h3 class="legacy__name">KAKERU</h3>
-                            <p class="legacy__desc">O "Robô" japonês dominou a CC11 com uma execução perfeita. Sua frieza garantiu o prêmio milionário e o topo do mundo.</p>
+                            <p class="legacy__desc">O "Robô" japonês dominou com seu JP cirúrgico.</p>
                         </div>
                     </article>
 
-                    <article class="legacy__card" data-aos="fade-left">
-                        <img src="images/about/champion_uma.jpg" alt="Uma campeão da Capcom Cup 10" class="legacy__card__img">
-                        <div class="legacy__card__details">
+                    <article class="legacy__item" data-aos="fade-left">
+                        <div class="legacy__frame flip-frame">
+                            <div class="flip-card">
+                                <div class="flip-card__front">
+                                    <img src="images/about/prize_uma.jpg" alt="Uma" class="legacy__img">
+                                </div>
+                                <div class="flip-card__back">
+                                    <img src="images/characters/juri.png" title="Juri" alt="Juri" class="legacy__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="legacy__details">
                             <span class="legacy__year">2024 - CC10</span>
                             <h3 class="legacy__name">UMA</h3>
-                            <p class="legacy__desc">Vindo do cenário de Taiwan, Uma provou que o esforço individual supera qualquer patrocínio, vencendo a primeira edição milionária.</p>
+                            <p class="legacy__desc">Venceu a primeira edição milionária com sua Juri implacável.</p>
                         </div>
                     </article>
                 </div>
@@ -83,15 +112,15 @@
                 <div class="qualify__grid">
                     <article class="qualify__card" data-aos="flip-left" data-aos-delay="100">
                         <div class="qualify__icon">
-                            <img src="images/assets/logo_cpt.png" alt="Ícone CPT">
+                            <img src="images/assets/logo_cpt.png" title="Logo CPT" alt="Logo CPT">
                         </div>
-                        <h3 class="qualify__title">CPT Majors</h3>
+                        <h3 class="qualify__title">Premier</h3>
                         <p class="qualify__text">Vencer um Major presencial (como EVO ou Thunderstruck) garante vaga direta ou pontos cruciais no ranking global. Onde os gigantes se enfrentam.</p>
                     </article>
 
                     <article class="qualify__card" data-aos="flip-left" data-aos-delay="300">
                         <div class="qualify__icon">
-                            <img src="images/assets/logo_world_warrior.png" alt="Ícone World Warrior">
+                            <img src="images/assets/logo_world_warrior_br.png" title="Logo World Warrior Brasil" alt="Logo World Warrior Brasil">
                         </div>
                         <h3 class="qualify__title">World Warrior</h3>
                         <p class="qualify__text">A base do cenário. Torneios regionais que premiam a constância. Foi por aqui que o nosso <b>Not Pedro</b> dominou o Brasil e carimbou o passaporte!</p>
@@ -99,7 +128,7 @@
 
                     <article class="qualify__card" data-aos="flip-left" data-aos-delay="500">
                         <div class="qualify__icon">
-                            <img src="images/assets/logo_sfl.png" alt="Ícone SFL">
+                            <img src="images/assets/logo_sfl.webp" title="Logo SFL US" alt="Logo SFL US">
                         </div>
                         <h3 class="qualify__title">Street Fighter League</h3>
                         <p class="qualify__text">Onde o trabalho em equipe brilha. Os melhores times das ligas Pro (EUA, Japão e Europa) garantem vagas para seus capitães ou MVPs.</p>
@@ -110,10 +139,7 @@
 
         <section class="players-spotlight">
             <div class="container">
-                <header class="players-spotlight__header" data-aos="fade-up">
-                    <h2 class="title--large">OS FAVORITOS AO TRONO</h2>
-                    <p class="text">Seis nomes que carregam o peso do favoritismo e a sede de vitória.</p>
-                </header>
+                <h2 class="title--medium">OS FAVORITOS DESTA EDIÇÃO</h2>
             </div>
             
             <div class="player-row" data-aos="fade-left">
@@ -124,7 +150,7 @@
                                 <img src="images/favorites/mena.jpg" alt="MenaRD" class="player-row__img">
                             </div>
                             <div class="player-row__card-back">
-                                <img src="images/about/champion_kakeru.webp" alt="Luke" class="player-row__img">
+                                <img src="images/characters/blanka.png" title="Blanka" alt="Blanka" class="player-row__img">
                             </div>
                         </div>
                     </div>
@@ -145,7 +171,7 @@
                                 <img src="images/favorites/punk.jpg" alt="Punk" class="player-row__img">
                             </div>
                             <div class="player-row__card-back">
-                                <img src="images/about/champion_kakeru.webp" alt="Luke" class="player-row__img">
+                                <img src="images/characters/cammy.png" title="Cammy" alt="Cammy" class="player-row__img player-row__img--top">
                             </div>
                         </div>
                     </div>
@@ -164,8 +190,8 @@
                             <div class="player-row__card-front">
                                 <img src="images/favorites/xiaohai.jpg" alt="Xiaohai" class="player-row__img">
                             </div>
-                            <div class="player-row__card-back">
-                                <img src="images/about/champion_kakeru.webp" alt="Luke" class="player-row__img">
+                            <div class="player-row__card-back player-row__card-back--bg-img">
+                                <img src="images/characters/mbison.png" title="M. Bison" alt="M. Bison" class="player-row__img player-row__img--top">
                             </div>
                         </div>
                     </div>
@@ -185,7 +211,7 @@
                                 <img src="images/favorites/leshar.jpg" alt="Leshar" class="player-row__img player-row__img--top">
                             </div>
                             <div class="player-row__card-back">
-                                <img src="images/about/champion_kakeru.webp" alt="Luke" class="player-row__img">
+                                <img src="images/characters/terry.png" title="Terry" alt="Terry" class="player-row__img">
                             </div>
                         </div>
                     </div>
@@ -205,7 +231,7 @@
                                 <img src="images/favorites/blaz.jpg" alt="Blaz" class="player-row__img">
                             </div>
                             <div class="player-row__card-back">
-                                <img src="images/about/champion_kakeru.webp" alt="Luke" class="player-row__img">
+                                <img src="images/characters/ryu.png" title="Ryu" alt="Ryu" class="player-row__img">
                             </div>
                         </div>
                     </div>
@@ -225,7 +251,7 @@
                                 <img src="images/favorites/notpedro.webp" alt="Not Pedro" class="player-row__img player-row__img--zoom-bottom">
                             </div>
                             <div class="player-row__card-back">
-                                <img src="images/about/champion_kakeru.webp" alt="Luke" class="player-row__img">
+                                <img src="images/characters/ken.png" title="Ken" alt="Ken" class="player-row__img">
                             </div>
                         </div>
                     </div>
@@ -251,53 +277,53 @@
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/kawano.jpg" alt="Kawano" class="japanese__img">
+                                    <img src="images/home/itazan.jpg" alt="Itabashi Zangief" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/marisa.png" title="Marisa" alt="Marisa" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Kawano</h3>
+                        <h3>Itazan</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/gachikun.jpg" alt="Gachikun" class="japanese__img">
+                                    <img src="images/home/momochi.jpg" alt="Momochi" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/ed.png" title="Ed" alt="Ed" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Gachikun</h3>
+                        <h3>Momochi</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/pugera.jpg" alt="Pugera" class="japanese__img">
+                                    <img src="images/home/ryukichi.jpg" alt="Ryukichi" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/mai.png" title="Mai" alt="Mai" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Pugera</h3>
+                        <h3>Ryukichi</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/sahara.jpg" alt="Sahara" class="japanese__img japanese__img--zoom-top">
+                                    <img src="images/home/kobayan.jpg" alt="Kobayan" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/zangief.png" title="Zangief" alt="Zangief" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Sahara</h3>
+                        <h3>Kobayan</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
@@ -306,7 +332,7 @@
                                     <img src="images/home/fuudo.jpg" alt="Fuudo" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/deejay.png" title="Dee Jay" alt="Dee Jay" class="japanese__img">
                                 </div>
                             </div>
                         </div>
@@ -319,7 +345,7 @@
                                     <img src="images/home/higuchi.jpg" alt="Higuchi" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/guile.png" title="Guile" alt="Guile" class="japanese__img">
                                 </div>
                             </div>
                         </div>
@@ -334,7 +360,7 @@
                                     </div>
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/home/pugera.jpg" alt="World Warrior Japan" class="japanese__img">
+                                    <img src="images/assets/logo_world_warrior_jp.png" title="Logo World Warrior Japão" alt="Logo World Warrior Japão" class="japanese__img">
                                 </div>
                             </div>
                         </div>
@@ -344,53 +370,53 @@
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/itazan.jpg" alt="Itabashi Zangief" class="japanese__img">
+                                    <img src="images/home/kawano.jpg" alt="Kawano" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/akuma.png" title="Akuma" alt="Akuma" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Itazan</h3>
+                        <h3>Kawano</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/momochi.jpg" alt="Momochi" class="japanese__img">
+                                    <img src="images/home/gachikun.jpg" alt="Gachikun" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/rashid.png" title="Rashid" alt="Rashid" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Momochi</h3>
+                        <h3>Gachikun</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/ryukichi.jpg" alt="Ryukichi" class="japanese__img">
+                                    <img src="images/home/pugera.jpg" alt="Pugera" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/sagat.png" title="Sagat" alt="Sagat" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Ryukichi</h3>
+                        <h3>Pugera</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
                             <div class="japanese__card">
                                 <div class="japanese__card__front">
-                                    <img src="images/home/kobayan.jpg" alt="Kobayan" class="japanese__img">
+                                    <img src="images/home/sahara.jpg" alt="Sahara" class="japanese__img japanese__img--zoom-top">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/ed.png" title="Ed" alt="Ed" class="japanese__img">
                                 </div>
                             </div>
                         </div>
-                        <h3>Kobayan</h3>
+                        <h3>Sahara</h3>
                     </div>
                     <div class="japanese__grid__item">
                         <div class="japanese__frame">
@@ -399,7 +425,7 @@
                                     <img src="images/home/yhc_mochi.jpg" alt="YHC_Mochi" class="japanese__img japanese__img--zoom-top">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/dhalsim.png" title="Dhalsim" alt="Dhalsim" class="japanese__img">
                                 </div>
                             </div>
                         </div>
@@ -412,7 +438,7 @@
                                     <img src="images/home/hinao.jpg" alt="Hinao" class="japanese__img">
                                 </div>
                                 <div class="japanese__card__back">
-                                    <img src="images/about/champion_kakeru.webp" alt="Luke" class="japanese__img">
+                                    <img src="images/characters/luke.png" title="Luke" alt="Luke" class="japanese__img">
                                 </div>
                             </div>
                         </div>
@@ -427,10 +453,10 @@
         <div class="container">
             <div class="footer__logos">
                 <div class="footer__logos__frame">
-                    <img src="images/assets/logo_capcom.png" class="capcom" alt="Logo Capcom">
+                    <img src="images/assets/logo_capcom.png" class="capcom" title="Logo Capcom" alt="Logo Capcom">
                 </div>
                 <div class="footer__logos__frame">
-                    <img src="images/assets/logo_street_fighter_6.webp" class="sf6" alt="Logo Street Fighter 6">
+                    <img src="images/assets/logo_street_fighter_6.webp" class="sf6" title="Logo Street Fighter 6" alt="Logo Street Fighter 6">
                 </div>
             </div>
             <div class="footer__social">
