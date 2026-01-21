@@ -1,5 +1,18 @@
 {
-    "png" : {
-        "quality" : 75
+    "jpeg": {
+        "quality": 80,
+        "progressive": true
+    },
+    "png": {
+        "quality": 75,
+        "compressionLevel": 9
+    },
+    "webp": {
+        "quality": 75,
+        "lossless": false
+    },
+    "avif": {
+        "quality": 60,
+        "lossless": false
     }
 }

@@ -58,6 +58,17 @@
         text-shadow: 4px 4px 0px variables.$deep-blue;
         margin: 30px 0;
         font-family: monospace;
+        display: block;
+        min-height: 4.5rem; // Reserve o espaço exato da altura da fonte + padding
+        font-family: 'Courier New', monospace; // Opcional: evita que números de larguras diferentes movam o texto
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 20px 0;
+        
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            min-height: 3rem;
+        }
     }
 
     &__actions {
