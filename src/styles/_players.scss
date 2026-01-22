@@ -120,10 +120,12 @@
         text-shadow: 0 0 3px variables.$white;
         margin: 50px 0;
 
-        &__team {            
+        &__team {    
+            display: flex;
+            gap: 10px;
+            
             img {
                 height: 12px;
-                margin-right: 10px;
                 background-color: variables.$dark;
             }
         }
