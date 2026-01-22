@@ -129,6 +129,12 @@
             .japanese__img {
                 height: auto;
             }
+
+            &--mystery {
+                .japanese__img {
+                    height: 100%;
+                }
+            }
         }
 
         &--mystery {

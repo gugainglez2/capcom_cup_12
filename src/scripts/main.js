@@ -37,8 +37,8 @@ function atualizaContador() {
         
     } else if (distanciaParaAcabar > 0) {
         contador.innerHTML = "O CAMPEONATO COMEÇOU! ASSISTA AO VIVO!";
-        contador.style.color = "#89223B"; 
-        contador.style.textShadow = "0 0 10px #89223B";
+        contador.style.color = "#c02a57"; 
+        contador.style.textShadow = "0 0 10px #c02a57";
     } else {
         clearInterval(contaAsHoras);
         contador.innerHTML = "EVENTO ENCERRADO!";

@@ -1,10 +1,16 @@
 @use 'variables';
+@use "sass:color";
 
 .players-spotlight {
     background: linear-gradient(180deg, 
     variables.$dark 0%, 
     variables.$deep-blue 50%, 
     variables.$dark 100%);
+
+    span {
+        font-weight: 900;
+        color: color.adjust(variables.$wine-red, $lightness: 10%);
+    }
 }
 
 .player-row {
@@ -43,7 +49,7 @@
         border-top: 2px solid variables.$neon-green;
         border-bottom: 2px solid variables.$neon-green;
         
-        .player-row__name { 
+        .player-row__info__identity__name { 
             color: variables.$neon-green;
             text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
         }
@@ -108,14 +114,40 @@
 
     &__rank {
         font-size: 1.5rem;
-        font-weight: 900;
-        color: variables.$wine-red;
-    }
+    }   
 
-    &__name {
-        font-size: 4rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        margin: 10px 0;
+    &__info {
+        text-shadow: 0 0 3px variables.$white;
+        margin: 50px 0;
+
+        &__team {            
+            img {
+                height: 12px;
+                margin-right: 10px;
+                background-color: variables.$dark;
+            }
+        }
+
+        &__identity {
+            display: flex;
+            align-items: baseline;
+            
+            &__name {
+                font-size: 4rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                line-height: 0.9;
+                
+            }
+
+            &__country {
+                display: flex;
+                align-items: baseline;
+
+                img {
+                    height: 12px;
+                }
+            }
+        } 
     }
 }
