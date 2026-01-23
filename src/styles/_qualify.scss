@@ -1,5 +1,19 @@
 @use 'variables';
 
+@mixin qualify_focus() {
+    transform: translateY(-10px);
+    border-color: variables.$neon-green;
+    box-shadow: 0 10px 30px rgba(variables.$neon-green, 0.2);
+
+    &::before {
+        transform: scaleX(1);
+    }
+
+    .qualify__icon {
+        transform: rotateY(360deg);
+    }
+}
+
 .qualify {
     padding: 100px 0;
     background-color: variables.$dark;
@@ -53,18 +67,14 @@
             transition: transform 0.4s ease;
         }
 
-        &:hover {
-            transform: translateY(-10px);
-            border-color: variables.$neon-green;
-            box-shadow: 0 10px 30px rgba(variables.$neon-green, 0.2);
-
-            &::before {
-                transform: scaleX(1);
+        @media (hover: hover) {
+            &:hover {
+                @include qualify_focus();
             }
+        }
 
-            .qualify__icon {
-                transform: rotateY(360deg);
-            }
+        &.is-active {
+            @include qualify_focus();
         }
     }
 
@@ -79,7 +89,7 @@
             border: 2px solid variables.$neon-green;
         }
     }
-//
+
     &__title {
         font-size: 1.5rem;
         color: variables.$white;

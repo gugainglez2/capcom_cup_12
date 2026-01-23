@@ -1,0 +1,62 @@
+@use 'variables';
+@use "sass:color";
+
+.prize {
+    padding: 100px 0;
+    background-color: variables.$dark;
+    border-top: 2px solid variables.$neon-green;
+
+    &__highlight {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        width: 50%;
+
+        h2 {
+            font-size: 3rem;
+            color: variables.$neon-green;
+            margin-bottom: 24px;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    }
+
+    .flip-card {
+        width: 50%;
+        height: 400px;
+        background-color: color.adjust(variables.$dark, $lightness: 4%);
+        
+        @media (max-width: 768px) {
+            width: 100%;
+            height: 300px;
+        }
+        
+        &__inner {
+            background-color: variables.$dark;
+        }
+
+        &__front {
+            border: 4px solid variables.$neon-green;
+
+            .flip-card__img {
+                height: auto;
+            }
+        }
+
+        &__back {
+            border: 1px solid rgba(variables.$white, 0.9);
+        }
+    }
+}

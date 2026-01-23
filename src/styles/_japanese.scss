@@ -1,10 +1,10 @@
 @use 'variables';
+@use "sass:color";
 
 .japanese {
     padding-bottom: 100px;
     background: variables.$dark;
     text-align: center;
-    overflow-x: hidden; // Garante que nada saia da tela
 
     &__header {
         text-align: center;
@@ -26,14 +26,11 @@
     &__slider {
         padding: 40px 0;
         width: 100%;
-        // Ativa o scroll horizontal
         overflow-x: auto; 
         cursor: grab;
-        
-        // Efeito de "imã" (o card para certinho no meio)
         scroll-snap-type: x mandatory; 
         
-        // Estilização da barra de rolagem (Chrome/Edge/Safari)
+        // estilização do scroll
         &::-webkit-scrollbar {
             height: 8px;
         }
@@ -45,8 +42,7 @@
             border-radius: 4px;
         }
 
-        // Máscara de transparência nas pontas para indicar que tem mais
-        // Isso cria um degradê suave que some nas bordas do slider
+        // Máscara de transparência nas pontas para indicar que tem mais itens
         mask-image: linear-gradient(to right, 
             transparent, 
             black 10%, 
@@ -64,13 +60,13 @@
     }
 
     &__grid {
-        display: inline-flex; // Mantém tudo em uma linha só
+        display: inline-flex;
         gap: 40px;
-        padding: 0 50px; // Respiro nas pontas
+        padding: 0 40px;
 
         &__item {
-            flex: 0 0 auto; // Impede os itens de encolherem
-            scroll-snap-align: center; // Faz o item "grudar" ao rolar
+            flex: 0 0 auto;
+            scroll-snap-align: center;
             
             h3 { 
                 margin-top: 15px;
@@ -82,9 +78,15 @@
         }
     }
 
-    &__frame {
+    .flip-card {
         width: 220px;
         height: 220px;
+        border-radius: 50%;
+        background-color: color.adjust(variables.$dark, $lightness: 5%);
+
+        &__inner {
+            border-radius: 50%;
+        }
 
         &__front, &__back {
             border-radius: 50%;
@@ -95,7 +97,7 @@
             border-color: variables.$wine-red;
             align-items: start;
 
-            img {
+            .flip-card__img {
                 height: auto;
             }
         }
@@ -119,24 +121,25 @@
                 }
             }
             
-            .japanese__frame__front {
-                border-style: dashed; // Diferencia dos outros cards
+            .flip-card__front {
+                border-style: dashed;
                 border-color: rgba(variables.$white, 0.3);
             }
 
-            .japanese__frame__back {
+            .flip-card__back {
                 align-items: center;
             }
         }
-    }
 
-    &__img--zoom-top {
-        object-position: center top;
-        transform: scale(1.4);
-        transform-origin: top center;
+        &__img--zoom-top {
+            object-position: center top;
+            transform: scale(1.4);
+            transform-origin: top center;
+        }
     }
 }
 
+//animação no mystery frame
 @keyframes pulse-shadow {
     0% { transform: scale(1); opacity: 0.2; }
     50% { transform: scale(1.1); opacity: 0.8; color: variables.$wine-red; }

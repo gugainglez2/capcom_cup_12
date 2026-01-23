@@ -13,12 +13,14 @@
     &--primary {
         background-color: variables.$neon-green;
         color: variables.$dark;
-        
-        &:hover {
-            background-color: transparent;
-            color: variables.$neon-green;
-            border-color: variables.$neon-green;
-            box-shadow: 0 0 20px variables.$neon-green;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: transparent;
+                color: variables.$neon-green;
+                border-color: variables.$neon-green;
+                box-shadow: 0 0 20px variables.$neon-green;
+            }
         }
     }
 
@@ -26,10 +28,12 @@
         background-color: transparent;
         color: variables.$white;
         border-color: variables.$white;
-
-        &:hover {
-            background-color: variables.$white;
-            color: variables.$dark;
+        
+        @media (hover: hover) {
+            &:hover {
+                background-color: variables.$white;
+                color: variables.$dark;
+            }
         }
     }
 }

@@ -71,6 +71,16 @@
     }
 }
 
+@media (max-width: 640px) {
+    .footer__logos {
+        display: flex;
+        justify-content: center;        
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
 // Responsividade para o rodapé
 @media (max-width: 768px) {
     .footer {

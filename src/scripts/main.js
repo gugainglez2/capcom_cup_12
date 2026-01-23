@@ -1,8 +1,8 @@
 AOS.init({
-    duration: 700, // Aumenta a duração para 1.2 segundos (mais suave)
-    offset: 100,    // A animação só começa quando o elemento estiver 300px dentro da tela
-    once: false,     // Anima apenas uma vez ao descer o scroll
-    easing: 'ease-in-out-cubic' // Curva de aceleração mais profissional
+    duration: 750,
+    offset: 200,
+    once: false,
+    easing: 'ease-in-out-cubic'
 });
 
 // Capcom Cup 12 - Tóquio, Japão
@@ -32,7 +32,6 @@ function atualizaContador() {
         const m = Math.floor((distanciaAteOEvento % horaEmMs) / minutoEmMs);
         const s = Math.floor((distanciaAteOEvento % minutoEmMs) / 1000);
 
-        // Formatação padronizada para evitar trepidação no texto
         contador.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
         
     } else if (distanciaParaAcabar > 0) {
@@ -51,6 +50,32 @@ atualizaContador();
 
 // Configura o intervalo
 const contaAsHoras = setInterval(atualizaContador, 1000);
+
+//controla os flip-cards
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.flip-card, .qualify__card');
+
+    cards.forEach(card => {
+        card.addEventListener('touchend', function(e) {
+            e.preventDefault(); 
+            
+            const isactive = this.classList.contains('is-active');
+            
+            cards.forEach(c => c.classList.remove('is-active'));
+
+            if (!isactive) {
+                this.classList.add('is-active');
+            }
+        }, { passive: false });
+    });
+
+    document.addEventListener('touchstart', (e) => {
+        if (!e.target.closest('.flip-card, .qualify__card')) {
+            cards.forEach(card => card.classList.remove('is-active'));
+        }
+    }, { passive: true });
+});
+
 
 // lógica centraliza grid
 let lastWidth = window.innerWidth; // Armazena a largura inicial
@@ -85,29 +110,4 @@ window.addEventListener('resize', () => {
 
 window.addEventListener('orientationchange', () => {
     setTimeout(centerSlider, 300);
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.flip-card');
-
-    cards.forEach(card => {
-        card.addEventListener('touchend', function(e) {
-            e.preventDefault(); 
-            
-            const isFlipped = this.classList.contains('is-flipped');
-            
-            cards.forEach(c => c.classList.remove('is-flipped'));
-
-            if (!isFlipped) {
-                this.classList.add('is-flipped');
-            }
-        }, { passive: false });
-    });
-
-    document.addEventListener('touchstart', (e) => {
-        if (!e.target.closest('.flip-card')) {
-            cards.forEach(card => card.classList.remove('is-flipped'));
-        }
-    }, { passive: true });
 });
