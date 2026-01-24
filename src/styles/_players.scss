@@ -9,6 +9,15 @@ $bg-color: linear-gradient(180deg,
 .players {
     background: $bg-color;
 
+    .title--medium {
+        text-align: center;
+        color: variables.$white;
+        font-family: variables.$font-title;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
     span {
         font-weight: 900;
         color: color.adjust(variables.$wine-red, $lightness: 10%);
@@ -67,6 +76,7 @@ $bg-color: linear-gradient(180deg,
                 display: flex;
                 align-items: baseline;
                 gap: 10px;
+                font-size: 0.75rem;
                 
                 img {
                     height: 12px;
@@ -136,6 +146,10 @@ $bg-color: linear-gradient(180deg,
 
             &--bg-img {
                 background-image: url('../images/assets/bg_mbison.jpg');
+            }
+
+            .flip-card__img {
+                object-position: top;
             }
         }
 

@@ -20,12 +20,21 @@
 body {
     background-color: variables.$dark;
     color: variables.$white;
-    font-family: 'Teko', sans-serif;
+    font-family: variables.$font-text;
+    font-size: 1.2rem; // Base de leitura mais confortável
+    line-height: 1.6;  // Espaçamento entre linhas para não "embolar"
+    -webkit-font-smoothing: antialiased; // Deixa a fonte mais nítida no Mac/iOS
     overflow-x: hidden;
+
+    @media (max-width: 640px) {
+        font-size: 1rem;
+    }
 }
 
-main {
-    background-color: variables.$dark;
+h1, h2, h3, .title {
+    font-family: variables.$font-title;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .container {
@@ -40,10 +49,4 @@ main {
     @media (max-width: 1024px) {
         max-width: 90%;
     }
-}
-
-.title--medium {
-    text-align: center;
-    font-size: 2.5rem;
-    color: variables.$white;
 }
