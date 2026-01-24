@@ -35,7 +35,7 @@ $bg-color: linear-gradient(180deg,
 
             @media (max-width: 768px) {
                 flex-direction: column;
-                text-align: center;
+                text-align: justify;
                 gap: 20px;
             }
         }
@@ -47,7 +47,7 @@ $bg-color: linear-gradient(180deg,
 
                 @media (max-width: 768px) {
                     flex-direction: column;
-                    text-align: center;
+                    text-align: justify;
                     gap: 20px;
                 }
             }
@@ -62,6 +62,11 @@ $bg-color: linear-gradient(180deg,
                 color: variables.$neon-green;
                 text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
             }
+        }
+
+        &__text {
+            flex-grow: 1;
+            max-width: 90%;
         }
 
         &__rank {
@@ -86,13 +91,13 @@ $bg-color: linear-gradient(180deg,
             &__identity {
                 display: flex;
                 align-items: baseline;
+                flex-wrap: wrap;
                 
                 &__name {
                     font-size: 4rem;
                     font-weight: 900;
                     text-transform: uppercase;
                     line-height: 0.9;
-                    
                 }
 
                 &__country {
@@ -110,23 +115,14 @@ $bg-color: linear-gradient(180deg,
     .flip-card {
         width: 400px;
         height: 400px;
+        flex-shrink: 0;
         border-radius: 20px;
         background-color: rgba(variables.$dark, 0.5);
 
         @media (max-width: 420px) {
-            width: 380px;
-            height: 380px;
-        }
-
-        @media (max-width: 400px) {
-            width: 360px;
-            height: 360px;
-        }
-
-        @media (max-width: 380px) {
-            width: 340px;
-            height: 340px;
-        }
+        width: 90vw;
+        height: 90vw; 
+    }
 
         &__inner {
             background: $bg-color;

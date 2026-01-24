@@ -1,9 +1,35 @@
 AOS.init({
-    duration: 750,
-    offset: 200,
-    once: false,
+    duration: 1000,
+    offset: 300,
+    once: true,
     easing: 'ease-in-out-cubic'
 });
+
+// Função para ajustar os delays dinamicamente
+function adjustAOSDelay() {
+    const cards = document.querySelectorAll('.qualify__card');
+    const isDesktop = window.innerWidth > 960;
+
+    cards.forEach((card, index) => {
+        if (isDesktop) {
+            // Em telas grandes, aplica delay escalonado (100, 300, 500...)
+            card.setAttribute('data-aos-delay', (index * 200) + 100);
+        } else {
+            // Em telas pequenas, remove o delay para a animação ser imediata
+            card.setAttribute('data-aos-delay', '0');
+        }
+    });
+
+    // Recalcula os estados do AOS após mudar os atributos
+    AOS.refresh(); 
+}
+
+// Executa ao carregar a página
+window.addEventListener('load', adjustAOSDelay);
+
+// Executa sempre que a tela mudar de tamanho
+window.addEventListener('resize', adjustAOSDelay);
+
 
 // Capcom Cup 12 - Tóquio, Japão
 // Início: 11 de Março às 10:00 (Japão) -> 10 de Março às 22:00 (Brasília)

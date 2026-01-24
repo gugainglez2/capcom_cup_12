@@ -21,9 +21,9 @@ body {
     background-color: variables.$dark;
     color: variables.$white;
     font-family: variables.$font-text;
-    font-size: 1.2rem; // Base de leitura mais confortável
-    line-height: 1.6;  // Espaçamento entre linhas para não "embolar"
-    -webkit-font-smoothing: antialiased; // Deixa a fonte mais nítida no Mac/iOS
+    font-size: 1.2rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 
     @media (max-width: 640px) {
@@ -31,10 +31,10 @@ body {
     }
 }
 
-h1, h2, h3, .title {
+h2, h3 {
     font-family: variables.$font-title;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    line-height: 1.2;
 }
 
 .container {

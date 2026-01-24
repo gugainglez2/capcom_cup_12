@@ -42,6 +42,13 @@
         &__img {
             object-position: top;
         }
+
+        &.is-active {
+            background: rgba(variables.$dark, 0.5);
+            border: 1px solid rgba(variables.$white, 0.1);
+            transition: border-color 0.3s ease;
+            border-color: variables.$wine-red;
+        }
     }
 
     &__details {
