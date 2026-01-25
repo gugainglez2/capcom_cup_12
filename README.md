@@ -1,3 +1,3 @@
 # Projeto Street Fighter 6 - CPT Page 🕹️
 
-> 🔗 **Acesse o projeto online:** [Clique aqui para ver o site em produção](https://capcom-cup-12.vercel.app)
+[![Site Vivo](https://img.shields.io/badge/Acessar_Projeto-Online-green?style=for-the-badge&logo=googlechrome&logoColor=white)](https://capcom-cup-12.vercel.app)
