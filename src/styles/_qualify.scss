@@ -82,10 +82,6 @@
             color: variables.$neon-green;
             text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
 
-            html {
-                scroll-behavior: smooth;
-            }
-
             &:hover {
                 color: variables.$wine-red;
             }
