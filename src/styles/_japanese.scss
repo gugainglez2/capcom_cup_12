@@ -6,13 +6,23 @@
     background: variables.$dark;
     text-align: center;
 
+    span {
+        font-weight: 900;
+        color: variables.$wine-red;
+        
+        &:hover {
+            color: variables.$neon-green;
+            text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+        }
+    }
+
     &__header {
         text-align: center;
         padding: 50px 0;
+        color: variables.$white;
         
         h2 {
             font-size: 2.5rem;
-            color: variables.$white;
             text-transform: uppercase;
             margin-bottom: 16px;
         }
@@ -27,7 +37,6 @@
         padding: 40px 0;
         width: 100%;
         overflow-x: auto; 
-        cursor: grab;
         scroll-snap-type: x mandatory; 
         
         // estilização do scroll
@@ -40,6 +49,7 @@
         &::-webkit-scrollbar-thumb {
             background: variables.$deep-blue;
             border-radius: 4px;
+            cursor: grab;
         }
 
         // Máscara de transparência nas pontas para indicar que tem mais itens

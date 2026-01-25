@@ -6,6 +6,11 @@ $bg-color: linear-gradient(180deg,
     variables.$deep-blue 50%, 
     variables.$dark 100%);
 
+@mixin neonHighlight() {
+    color: variables.$neon-green;
+    text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+}
+
 .players {
     background: $bg-color;
 
@@ -23,6 +28,10 @@ $bg-color: linear-gradient(180deg,
         color: color.adjust(variables.$wine-red, $lightness: 10%);
     }
 
+    a span:hover {
+        @include neonHighlight();
+    }
+
     .player-row {
         padding: 100px 0;
         overflow: hidden;
@@ -32,6 +41,7 @@ $bg-color: linear-gradient(180deg,
             display: flex;
             align-items: center;
             gap: 80px;
+            color: variables.$white;
 
             @media (max-width: 768px) {
                 flex-direction: column;
@@ -59,8 +69,7 @@ $bg-color: linear-gradient(180deg,
             border-bottom: 2px solid variables.$neon-green;
             
             .player-row__info__identity__name { 
-                color: variables.$neon-green;
-                text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+                @include neonHighlight();
             }
         }
 
@@ -75,13 +84,30 @@ $bg-color: linear-gradient(180deg,
 
         &__info {
             text-shadow: 0 0 3px variables.$white;
-            margin: 50px 0;
+            margin: 30px 0;
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    @include neonHighlight();
+                }
+            }
 
             &__team {    
                 display: flex;
                 align-items: baseline;
                 gap: 10px;
                 font-size: 0.75rem;
+                position: relative; 
+                z-index: 2;
+                margin-bottom: 5px; 
+                
+                a {
+                    display: inline-block; // Torna a área do link mais sólida
+                    position: relative;
+                    z-index: 10;
+                }
                 
                 img {
                     height: 12px;
@@ -92,6 +118,8 @@ $bg-color: linear-gradient(180deg,
                 display: flex;
                 align-items: baseline;
                 flex-wrap: wrap;
+                position: relative;
+                z-index: 1;
                 
                 &__name {
                     font-size: 4rem;

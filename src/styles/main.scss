@@ -19,7 +19,6 @@
 
 body {
     background-color: variables.$dark;
-    color: variables.$white;
     font-family: variables.$font-text;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -29,6 +28,10 @@ body {
     @media (max-width: 640px) {
         font-size: 1rem;
     }
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
 }
 
 h2, h3 {

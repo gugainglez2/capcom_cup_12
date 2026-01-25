@@ -29,9 +29,22 @@
         }
 
         p {
+            color: variables.$white;
             font-size: 1.1rem;
             opacity: 0.9;
             text-align: justify;
+
+            a {
+                color: variables.$wine-red;
+                text-shadow: 0 0 15px rgba(variables.$wine-red, 0.5);
+                opacity: 1;
+                font-weight: bold;
+            }
+
+            a:hover {
+                color: variables.$neon-green;
+                text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+            }
         }
 
         @media (max-width: 768px) {

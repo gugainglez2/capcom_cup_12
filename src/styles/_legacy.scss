@@ -5,6 +5,16 @@
     padding: 80px 0;
     background: linear-gradient(variables.$dark, variables.$deep-blue);
 
+    span {
+        font-weight: 900;
+        color: variables.$wine-red;
+
+        &:hover {
+            color: variables.$neon-green;
+            text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+        }
+    }
+
     .title--medium {
         text-align: center;
         color: variables.$white;

@@ -77,6 +77,19 @@
         &.is-active {
             @include qualify_focus();
         }
+
+        .internal-link {
+            color: variables.$neon-green;
+            text-shadow: 0 0 15px rgba(variables.$neon-green, 0.5);
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            &:hover {
+                color: variables.$wine-red;
+            }
+        }
     }
 
     &__icon {
@@ -100,9 +113,9 @@
     }
 
     &__text {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.6;
-        color: rgba(variables.$white, 0.7);
+        color: rgba(variables.$white, 0.9);
 
         b {
             color: variables.$neon-green;

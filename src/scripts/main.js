@@ -1,41 +1,31 @@
-AOS.init({
-    duration: 1000,
-    offset: 300,
-    once: true,
-    easing: 'ease-in-out-cubic'
-});
-
-// Função para ajustar os delays dinamicamente
-function adjustAOSDelay() {
-    const cards = document.querySelectorAll('.qualify__card');
+// 1. Unificando a inicialização do AOS e dos atributos
+function initCustomAOS() {
+    const isLandscape = window.innerHeight < 600 && window.innerWidth > window.innerHeight;
     const isDesktop = window.innerWidth > 960;
-
+    
+    const cards = document.querySelectorAll('.qualify__card');
     cards.forEach((card, index) => {
         if (isDesktop) {
-            // Em telas grandes, aplica delay escalonado (100, 300, 500...)
             card.setAttribute('data-aos-delay', (index * 200) + 100);
+            card.setAttribute('data-aos-offset', '300'); // Offset maior no desktop
         } else {
-            // Em telas pequenas, remove o delay para a animação ser imediata
-            card.setAttribute('data-aos-delay', '0');
+            card.setAttribute('data-aos-delay', '1');
+            card.setAttribute('data-aos-offset', '1'); // Offset menor no mobile/landscape
         }
+        card.setAttribute('data-aos-anchor-placement', 'top-bottom');
     });
 
-    // Recalcula os estados do AOS após mudar os atributos
-    AOS.refresh(); 
+    AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out-cubic',
+        anchorPlacement: isLandscape ? 'top-bottom' : 'top-center'
+    });
 }
 
-// Executa ao carregar a página
-window.addEventListener('load', adjustAOSDelay);
-
-// Executa sempre que a tela mudar de tamanho
-window.addEventListener('resize', adjustAOSDelay);
-
-
-// Capcom Cup 12 - Tóquio, Japão
-// Início: 11 de Março às 10:00 (Japão) -> 10 de Março às 22:00 (Brasília)
+// 2. Lógica do Contador (Mantenha como está, mas certifique-se de que a data é futura)
 const dataDoEvento = new Date("Mar 10, 2026 22:00:00"); 
-const dataFimEvento = new Date("Mar 15, 2026 10:00:00"); // Final do torneio no fuso BRT
-
+const dataFimEvento = new Date("Mar 15, 2026 10:00:00");
 const timeStampDoEvento = dataDoEvento.getTime();
 const timeStampFim = dataFimEvento.getTime();
 
@@ -59,23 +49,26 @@ function atualizaContador() {
         const s = Math.floor((distanciaAteOEvento % minutoEmMs) / 1000);
 
         contador.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
-        
     } else if (distanciaParaAcabar > 0) {
         contador.innerHTML = "O CAMPEONATO COMEÇOU! ASSISTA AO VIVO!";
         contador.style.color = "#c02a57"; 
-        contador.style.textShadow = "0 0 10px #c02a57";
     } else {
-        clearInterval(contaAsHoras);
         contador.innerHTML = "EVENTO ENCERRADO!";
-        contador.style.color = "#fff";
     }
 }
 
-// Chama a função imediatamente para evitar o delay inicial do setInterval
-atualizaContador();
+// 3. Inicialização Única ao carregar o DOM
+document.addEventListener('DOMContentLoaded', () => {
+    initCustomAOS();     // Inicia o AOS e os cards
+    atualizaContador();  // Inicia o contador imediatamente
+    setInterval(atualizaContador, 1000); // Mantém o contador rodando
+});
 
-// Configura o intervalo
-const contaAsHoras = setInterval(atualizaContador, 1000);
+// 4. Resize (Otimizado)
+window.addEventListener('resize', () => {
+    AOS.refresh();
+});
+
 
 //controla os flip-cards
 document.addEventListener('DOMContentLoaded', () => {
@@ -83,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cards.forEach(card => {
         card.addEventListener('touchend', function(e) {
+            if (e.target.closest('a')) {
+                return; 
+            }
+            
             e.preventDefault(); 
             
             const isactive = this.classList.contains('is-active');
