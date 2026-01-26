@@ -1,4 +1,4 @@
-// 1. Unificando a inicialização do AOS e dos atributos
+// Unificando a inicialização do AOS e dos atributos
 function initCustomAOS() {
     const isLandscape = window.innerHeight < 600 && window.innerWidth > window.innerHeight;
     const isDesktop = window.innerWidth > 960;
@@ -7,23 +7,18 @@ function initCustomAOS() {
     cards.forEach((card, index) => {
         if (isDesktop) {
             card.setAttribute('data-aos-delay', (index * 200) + 100);
-            card.setAttribute('data-aos-offset', '300'); // Offset maior no desktop
-        } else {
-            card.setAttribute('data-aos-delay', '1');
-            card.setAttribute('data-aos-offset', '1'); // Offset menor no mobile/landscape
         }
-        card.setAttribute('data-aos-anchor-placement', 'top-bottom');
     });
 
     AOS.init({
         duration: 1000,
+        offset: 1,
         once: true,
         easing: 'ease-in-out-cubic',
         anchorPlacement: isLandscape ? 'top-bottom' : 'top-center'
     });
 }
 
-// 2. Lógica do Contador (Mantenha como está, mas certifique-se de que a data é futura)
 const dataDoEvento = new Date("Mar 10, 2026 22:00:00"); 
 const dataFimEvento = new Date("Mar 15, 2026 10:00:00");
 const timeStampDoEvento = dataDoEvento.getTime();
@@ -57,14 +52,14 @@ function atualizaContador() {
     }
 }
 
-// 3. Inicialização Única ao carregar o DOM
+// Inicialização Única ao carregar o DOM
 document.addEventListener('DOMContentLoaded', () => {
     initCustomAOS();     // Inicia o AOS e os cards
     atualizaContador();  // Inicia o contador imediatamente
     setInterval(atualizaContador, 1000); // Mantém o contador rodando
 });
 
-// 4. Resize (Otimizado)
+// Resize (Otimizado)
 window.addEventListener('resize', () => {
     AOS.refresh();
 });
