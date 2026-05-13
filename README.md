@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./src/assets/demonstracao.gif" alt="Demonstração Animada Capcom Cup" width="800">
+</div>
+
 # 🕹️ Capcom Cup 12 - Landing Page (Fan Project)
 
 Este projeto é uma Landing Page imersiva e de alta performance dedicada à **Capcom Cup 12**, o ápice do cenário competitivo de Street Fighter 6. O objetivo foi criar uma experiência visual dinâmica que reflita a energia dos eSports, aplicando técnicas avançadas de estilização, responsividade e performance.
